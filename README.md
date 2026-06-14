@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nockeby Bageri — Webbplats
 
-## Getting Started
+Next.js 16 · Tailwind CSS v4 · App Router
 
-First, run the development server:
+## Kom igång
 
 ```bash
+npm install
+cp .env.local.example .env.local
+# Fyll i miljövariabler (se nedan)
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Öppna [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Miljövariabler
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Skapa `.env.local` från `.env.local.example` och fyll i:
 
-## Learn More
+| Variabel | Beskrivning |
+|---|---|
+| `GOOGLE_PLACES_API_KEY` | Google Cloud API-nyckel med Places API aktiverat |
+| `GOOGLE_PLACE_ID` | Place ID för Nockeby Bageri (börjar med `ChIJ...`) |
 
-To learn more about Next.js, take a look at the following resources:
+**Hitta Place ID:**
+1. Gå till https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder
+2. Sök på "Nockeby Bageri, Nockeby torg 9, Stockholm"
+3. Kopiera Place ID (format: `ChIJ...`)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Google Cloud-konfiguration:**
+1. Skapa projekt på https://console.cloud.google.com
+2. Aktivera **Places API (New)**
+3. Skapa API-nyckel, begränsa till din domän
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Reviews-sektionen döljs tyst om ingen nyckel är angiven.
 
-## Deploy on Vercel
+## Kartan
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Google Maps-embedden använder hårdkodade koordinater (lat 59.328954, lng 17.9279561) och kräver ingen API-nyckel.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deploy till Vercel
+
+```bash
+npm i -g vercel
+vercel
+vercel env add GOOGLE_PLACES_API_KEY
+vercel env add GOOGLE_PLACE_ID
+```
+
+## TODOs — foton
+
+Ersätt bildplatshållarna med riktiga foton i `public/`. Alla platshållare är markerade med `TODO:` i koden:
+
+- Hero-bild: liggande foto av bageriet, brödet eller interiören med det sage-gröna panelet
+- `public/sortiment/brod-cover.jpg` — surdegsbröd ur stenugnen
+- `public/sortiment/bakverk-cover.jpg` — croissanter och bullar på disken
+- `public/sortiment/smorgasar-cover.jpg` — smörgåsar på marmordisken
+- `public/sortiment/kaffe-cover.jpg` — kaffekopp i keramikmugg
+- `public/sortiment/pizzakvall-cover.jpg` — pizza ur stenugnen fredag
+- `public/stenugn.jpg` — stenugnen inifrån (Om oss-sidan)
+
+Tips: 1600–2400px bredd, JPEG 85% kvalitet, fotograferade ovanifrån (flat lay) eller interiörbilder med naturligt ljus.
+Logotypen (`/logo.jpg`) är redan på plats.
+
+## Anpassa sortimentet
+
+Redigera `src/content/sortiment.ts` för att uppdatera produkter, priser och beskrivningar.
+
+## Sidstruktur
+
+| Route | Sida |
+|---|---|
+| `/` | Startsida |
+| `/om-oss` | Om oss & historia |
+| `/sortiment` | Sortiment-översikt |
+| `/sortiment/brod` | Bröd |
+| `/sortiment/bakverk` | Bakverk |
+| `/sortiment/smorgasar` | Smörgåsar |
+| `/sortiment/kaffe` | Kaffe & dryck |
+| `/sortiment/pizzakvall` | Pizzakväll |
+| `/hitta-oss` | Hitta oss + karta |
