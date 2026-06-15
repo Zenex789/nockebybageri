@@ -64,6 +64,20 @@ export default function SiteHeader() {
         scrolled ? "header-frosted" : "bg-transparent"
       }`}
     >
+      {/* Announcement strip */}
+      <div
+        className="text-center py-1.5 text-[0.6rem] tracking-[0.18em] uppercase hidden md:block"
+        style={{ backgroundColor: "var(--dark)", color: "var(--dark-secondary)" }}
+      >
+        Öppet Mån–Fre{" "}
+        <span style={{ color: "var(--dark-text)" }}>07:30–18:00</span>
+        {" · "}Lör–Sön{" "}
+        <span style={{ color: "var(--dark-text)" }}>08:00–17:00</span>
+        {" · "}
+        <span style={{ color: "var(--accent-warm)" }}>Pizzakväll</span>
+        {" "}varje fredag
+      </div>
+
       <div className="max-w-[1280px] mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 shrink-0">
@@ -76,7 +90,7 @@ export default function SiteHeader() {
             priority
           />
           <span
-            className="hidden sm:block text-sm font-medium tracking-[0.12em] uppercase"
+            className="hidden sm:block text-[0.68rem] font-medium tracking-[0.18em] uppercase"
             style={{
               fontFamily: "var(--font-body)",
               color: "var(--text)",
@@ -92,7 +106,7 @@ export default function SiteHeader() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm tracking-wide transition-colors hover:opacity-70"
+              className="text-[0.68rem] tracking-[0.15em] uppercase transition-opacity hover:opacity-60"
               style={{
                 fontFamily: "var(--font-body)",
                 color: "var(--text)",

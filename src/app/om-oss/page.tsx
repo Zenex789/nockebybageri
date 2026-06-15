@@ -12,13 +12,11 @@ export default function OmOssPage() {
     <>
       {/* Page hero */}
       <div
-        className="pt-32 pb-16"
-        style={{ backgroundColor: "var(--dark)" }}
+        className="pt-40 pb-20 border-b"
+        style={{ backgroundColor: "var(--surface)", borderColor: "var(--border)" }}
       >
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">
-          <span className="eyebrow mb-6" style={{ color: "var(--dark-secondary)" }}>
-            Om oss
-          </span>
+          <span className="eyebrow mb-6">Om oss</span>
           <h1
             style={{
               fontFamily: "var(--font-display)",
@@ -26,7 +24,7 @@ export default function OmOssPage() {
               fontWeight: 400,
               letterSpacing: "-0.02em",
               lineHeight: 1.05,
-              color: "var(--dark-text)",
+              color: "var(--text)",
             }}
           >
             Bröd tar tid.{" "}
@@ -189,10 +187,7 @@ export default function OmOssPage() {
                   className="border-t pt-6"
                   style={{ borderColor: "var(--border)" }}
                 >
-                  <p
-                    className="eyebrow mb-3"
-                    style={{ color: "var(--accent)" }}
-                  >
+                  <p className="eyebrow mb-3">
                     {item.label}
                   </p>
                   <p

@@ -7,7 +7,6 @@ const featured = [
     title: "Bröd",
     sub: "Stenugnsbakat",
     desc: "Surdegsbröd på råg och vete, levain och focaccia — bakade i vår vedeldade stenugn varje morgon.",
-    accent: "#7A9E8E",
     imgAlt: "TODO: foto av surdegsbröd ur stenugnen",
   },
   {
@@ -15,7 +14,6 @@ const featured = [
     title: "Bakverk",
     sub: "Hantverk i varje lager",
     desc: "Croissanter, kardemummabullar, semlor och mazariner — gjorda på ekologiskt smör och vår egna deg.",
-    accent: "#C8922A",
     imgAlt: "TODO: foto av croissanter och bullar på disken",
   },
   {
@@ -23,7 +21,6 @@ const featured = [
     title: "Pizzakväll",
     sub: "Varje fredag",
     desc: "Varje fredag eldar vi upp stenugnen igen och bakar pizza på surdegsdeg. Nytt recept varje vecka.",
-    accent: "#1C2B3A",
     imgAlt: "TODO: foto av pizza ur stenugnen på fredag",
   },
 ];
@@ -36,7 +33,7 @@ export default function SortimentPreview() {
     >
       <div className="max-w-[1280px] mx-auto px-6 md:px-10">
         <RevealOnScroll>
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16 pb-6 border-b" style={{ borderColor: "var(--border)" }}>
             <div>
               <span className="eyebrow mb-3">Sortiment</span>
               <h2
@@ -56,10 +53,10 @@ export default function SortimentPreview() {
             </div>
             <Link
               href="/sortiment"
-              className="text-sm font-medium tracking-wide border-b pb-0.5 transition-opacity hover:opacity-60 shrink-0"
+              className="text-[0.7rem] font-medium tracking-[0.14em] uppercase border-b pb-0.5 transition-opacity hover:opacity-60 shrink-0"
               style={{
-                color: "var(--accent)",
-                borderColor: "var(--accent)",
+                color: "var(--text-secondary)",
+                borderColor: "var(--border)",
                 fontFamily: "var(--font-body)",
               }}
             >
@@ -68,29 +65,30 @@ export default function SortimentPreview() {
           </div>
         </RevealOnScroll>
 
-        {/* Asymmetric mosaic */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
+        {/* Asymmetric editorial grid */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10">
           {/* Large card — col 1–7 */}
           <RevealOnScroll className="md:col-span-7">
             <Link
               href={`/sortiment/${featured[0].slug}`}
-              className="group relative block overflow-hidden rounded-[var(--radius-lg)]"
-              style={{ backgroundColor: "#DDD8CE" }}
+              className="group block"
             >
-              <div
-                className="aspect-[4/3] img-placeholder"
-                style={{ backgroundColor: "#DDD8CE" }}
-              >
-                <span>{featured[0].imgAlt}</span>
+              <div className="overflow-hidden" style={{ borderRadius: "var(--radius-sm)" }}>
+                <div
+                  className="aspect-[4/3] img-placeholder transition-transform duration-500 group-hover:scale-[1.02]"
+                  style={{ backgroundColor: "#DDD8CE" }}
+                >
+                  <span>{featured[0].imgAlt}</span>
+                </div>
               </div>
-              {/* Glass card at bottom */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 glass-panel rounded-t-none border-x-0 border-b-0">
-                <p className="eyebrow mb-1.5">{featured[0].sub}</p>
+              <div className="pt-5">
+                <span className="eyebrow mb-2">{featured[0].sub}</span>
                 <h3
                   style={{
                     fontFamily: "var(--font-display)",
                     fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)",
                     fontWeight: 400,
+                    letterSpacing: "-0.02em",
                     color: "var(--text)",
                   }}
                 >
@@ -102,39 +100,47 @@ export default function SortimentPreview() {
                 >
                   {featured[0].desc}
                 </p>
+                <span
+                  className="mt-4 inline-block text-[0.7rem] tracking-[0.14em] uppercase border-b pb-0.5 transition-opacity group-hover:opacity-60"
+                  style={{ color: "var(--accent)", borderColor: "var(--accent)", fontFamily: "var(--font-body)" }}
+                >
+                  Utforska →
+                </span>
               </div>
             </Link>
           </RevealOnScroll>
 
           {/* Right column — cards 2 + 3 */}
-          <div className="md:col-span-5 flex flex-col gap-5">
+          <div className="md:col-span-5 flex flex-col gap-8">
             {featured.slice(1).map((item, i) => (
               <RevealOnScroll key={item.slug} delay={(i + 1) * 80}>
                 <Link
                   href={`/sortiment/${item.slug}`}
-                  className="group relative block overflow-hidden rounded-[var(--radius-lg)]"
-                  style={{ backgroundColor: "#DDD8CE" }}
+                  className="group block"
                 >
-                  <div
-                    className="aspect-[16/9] img-placeholder"
-                    style={{ backgroundColor: "#DDD8CE" }}
-                  >
-                    <span>{item.imgAlt}</span>
+                  <div className="overflow-hidden" style={{ borderRadius: "var(--radius-sm)" }}>
+                    <div
+                      className="aspect-[16/9] img-placeholder transition-transform duration-500 group-hover:scale-[1.02]"
+                      style={{ backgroundColor: "#DDD8CE" }}
+                    >
+                      <span>{item.imgAlt}</span>
+                    </div>
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-5 glass-panel rounded-t-none border-x-0 border-b-0">
-                    <p className="eyebrow mb-1">{item.sub}</p>
+                  <div className="pt-4">
+                    <span className="eyebrow mb-1.5">{item.sub}</span>
                     <h3
                       style={{
                         fontFamily: "var(--font-display)",
                         fontSize: "clamp(1.4rem, 2.5vw, 1.9rem)",
                         fontWeight: 400,
+                        letterSpacing: "-0.02em",
                         color: "var(--text)",
                       }}
                     >
                       {item.title}
                     </h3>
                     <p
-                      className="mt-1 text-sm"
+                      className="mt-1.5 text-sm leading-relaxed"
                       style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)" }}
                     >
                       {item.desc}

@@ -2,20 +2,20 @@
 
 /* ── Design tokens ─────────────────────────────────────────────────── */
 :root {
-  --bg:             #FAF7F2;
-  --surface:        #FFFDFA;
+  --bg:             #FDFAF5;
+  --surface:        #FFFEFA;
   --text:           #1C2B3A;
-  --text-secondary: #5C7A8A;
-  --border:         #E5DDD4;
+  --text-secondary: #6B7885;
+  --border:         #E8E2D8;
   --accent:         #7A9E8E;
   --accent-warm:    #C8922A;
   --dark:           #1C2B3A;
   --dark-surface:   #243546;
   --dark-text:      #F5F0E8;
-  --dark-secondary: #A8C4CC;
-  --radius:         10px;
-  --radius-sm:      6px;
-  --radius-lg:      16px;
+  --dark-secondary: #A8B8C0;
+  --radius:         6px;
+  --radius-sm:      3px;
+  --radius-lg:      10px;
 }
 
 /* ── Tailwind v4 theme ─────────────────────────────────────────────── */
@@ -77,11 +77,11 @@ p {
 .eyebrow {
   display: block;
   font-family: var(--font-body), sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--text-secondary);
+  color: var(--accent-warm);
 }
 
 /* ── Reveal animation ──────────────────────────────────────────────── */

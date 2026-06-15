@@ -57,23 +57,15 @@ export default function StoryTeaser() {
           </Link>
         </RevealOnScroll>
 
-        {/* Image — right (offset) */}
+        {/* Image — right */}
         <RevealOnScroll delay={120}>
-          <div className="relative">
-            <div
-              className="aspect-[4/5] img-placeholder rounded-[var(--radius-lg)] overflow-hidden"
-              style={{ backgroundColor: "#DDD8CE" }}
-            >
-              <span className="text-xs" style={{ color: "var(--text-secondary)" }}>
-                TODO: foto av stenugnen inifrån bageriet
-              </span>
-            </div>
-            {/* Floating accent block */}
-            <div
-              className="absolute -bottom-6 -left-6 w-28 h-28 rounded-[var(--radius-lg)] hidden md:block"
-              style={{ backgroundColor: "var(--accent)", opacity: 0.15 }}
-              aria-hidden="true"
-            />
+          <div
+            className="aspect-[4/5] img-placeholder overflow-hidden"
+            style={{ backgroundColor: "#DDD8CE", borderRadius: "var(--radius-sm)" }}
+          >
+            <span className="text-xs" style={{ color: "var(--text-secondary)" }}>
+              TODO: foto av stenugnen inifrån bageriet
+            </span>
           </div>
         </RevealOnScroll>
       </div>

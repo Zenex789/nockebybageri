@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <section
-      className="relative min-h-[100svh] flex items-end"
+      className="relative min-h-[92svh] flex items-end"
       style={{ backgroundColor: "var(--dark)" }}
     >
       {/* Background image placeholder */}
@@ -98,20 +98,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Hours badge — floating */}
-      <div
-        className="absolute bottom-8 right-6 md:right-10 glass-panel px-5 py-4 hidden md:block"
-      >
-        <p className="eyebrow mb-2" style={{ color: "var(--text-secondary)" }}>
-          Öppettider
-        </p>
-        <p className="text-sm" style={{ color: "var(--text)", fontFamily: "var(--font-body)" }}>
-          Mån–Fre 07:30–18:00
-        </p>
-        <p className="text-sm" style={{ color: "var(--text)", fontFamily: "var(--font-body)" }}>
-          Lör–Sön 08:00–17:00
-        </p>
-      </div>
     </section>
   );
 }
