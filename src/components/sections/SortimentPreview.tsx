@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
 
 const featured = [
@@ -7,21 +8,24 @@ const featured = [
     title: "Bröd",
     sub: "Stenugnsbakat",
     desc: "Surdegsbröd på råg och vete, levain och focaccia — bakade i vår vedeldade stenugn varje morgon.",
-    imgAlt: "TODO: foto av surdegsbröd ur stenugnen",
+    img: "/images/brod.jpg",
+    imgAlt: "Surdegsbröd",
   },
   {
     slug: "bakverk",
     title: "Bakverk",
     sub: "Hantverk i varje lager",
     desc: "Croissanter, kardemummabullar, semlor och mazariner — gjorda på ekologiskt smör och vår egna deg.",
-    imgAlt: "TODO: foto av croissanter och bullar på disken",
+    img: "/images/bakverk.jpg",
+    imgAlt: "Bakverk",
   },
   {
     slug: "pizzakvall",
     title: "Pizzakväll",
     sub: "Varje fredag",
     desc: "Varje fredag eldar vi upp stenugnen igen och bakar pizza på surdegsdeg. Nytt recept varje vecka.",
-    imgAlt: "TODO: foto av pizza ur stenugnen på fredag",
+    img: "/images/pizza.jpg",
+    imgAlt: "Pizzakväll",
   },
 ];
 
@@ -73,13 +77,13 @@ export default function SortimentPreview() {
               href={`/sortiment/${featured[0].slug}`}
               className="group block"
             >
-              <div className="overflow-hidden" style={{ borderRadius: "var(--radius-sm)" }}>
-                <div
-                  className="aspect-[4/3] img-placeholder transition-transform duration-500 group-hover:scale-[1.02]"
-                  style={{ backgroundColor: "#DDD8CE" }}
-                >
-                  <span>{featured[0].imgAlt}</span>
-                </div>
+              <div className="relative aspect-[4/3] overflow-hidden" style={{ borderRadius: "var(--radius-sm)" }}>
+                <Image
+                  src={featured[0].img}
+                  alt={featured[0].imgAlt}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                />
               </div>
               <div className="pt-5">
                 <span className="eyebrow mb-2">{featured[0].sub}</span>
@@ -118,13 +122,13 @@ export default function SortimentPreview() {
                   href={`/sortiment/${item.slug}`}
                   className="group block"
                 >
-                  <div className="overflow-hidden" style={{ borderRadius: "var(--radius-sm)" }}>
-                    <div
-                      className="aspect-[16/9] img-placeholder transition-transform duration-500 group-hover:scale-[1.02]"
-                      style={{ backgroundColor: "#DDD8CE" }}
-                    >
-                      <span>{item.imgAlt}</span>
-                    </div>
+                  <div className="relative aspect-[16/9] overflow-hidden" style={{ borderRadius: "var(--radius-sm)" }}>
+                    <Image
+                      src={item.img}
+                      alt={item.imgAlt}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                    />
                   </div>
                   <div className="pt-4">
                     <span className="eyebrow mb-1.5">{item.sub}</span>

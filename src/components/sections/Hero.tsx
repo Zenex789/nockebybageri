@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -6,16 +7,15 @@ export default function Hero() {
       className="relative min-h-[92svh] flex items-end"
       style={{ backgroundColor: "var(--dark)" }}
     >
-      {/* Background image placeholder */}
-      <div
-        className="absolute inset-0 img-placeholder"
-        aria-hidden="true"
-        style={{ backgroundColor: "#2A3D4E" }}
-      >
-        <span style={{ color: "color-mix(in srgb, var(--dark-secondary) 60%, transparent)" }}>
-          TODO: foto av bageriet eller nybakat bröd — liggande format,
-          naturligt ljus
-        </span>
+      {/* Background image */}
+      <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
+        <Image
+          src="/images/hero.jpg"
+          alt="Nockeby Bageri"
+          fill
+          priority
+          className="object-cover"
+        />
       </div>
 
       {/* Scrim */}

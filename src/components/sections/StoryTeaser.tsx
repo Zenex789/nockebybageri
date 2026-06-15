@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
 
 export default function StoryTeaser() {
@@ -60,12 +61,15 @@ export default function StoryTeaser() {
         {/* Image — right */}
         <RevealOnScroll delay={120}>
           <div
-            className="aspect-[4/5] img-placeholder overflow-hidden"
-            style={{ backgroundColor: "#DDD8CE", borderRadius: "var(--radius-sm)" }}
+            className="relative aspect-[4/5] overflow-hidden"
+            style={{ borderRadius: "var(--radius-sm)" }}
           >
-            <span className="text-xs" style={{ color: "var(--text-secondary)" }}>
-              TODO: foto av stenugnen inifrån bageriet
-            </span>
+            <Image
+              src="/images/interior.jpg"
+              alt="Bageriet inifrån"
+              fill
+              className="object-cover"
+            />
           </div>
         </RevealOnScroll>
       </div>
