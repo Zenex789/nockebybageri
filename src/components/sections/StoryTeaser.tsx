@@ -5,7 +5,7 @@ import RevealOnScroll from "@/components/ui/RevealOnScroll";
 export default function StoryTeaser() {
   return (
     <section
-      className="py-24 md:py-36"
+      className="py-16 md:py-24"
       style={{ backgroundColor: "var(--bg)" }}
     >
       <div className="max-w-[1280px] mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">

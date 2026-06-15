@@ -7,7 +7,7 @@ export default function FindUsSection() {
 
   return (
     <section
-      className="py-24 md:py-36"
+      className="py-16 md:py-24"
       style={{ backgroundColor: "var(--surface)" }}
     >
       <div className="max-w-[1280px] mx-auto px-6 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
@@ -82,6 +82,22 @@ export default function FindUsSection() {
           >
             Vägbeskrivning →
           </a>
+
+          <div
+            className="mt-10 p-5 border"
+            style={{
+              borderColor: "var(--accent)",
+              borderRadius: "var(--radius)",
+            }}
+          >
+            <p className="eyebrow mb-2">Varje fredag</p>
+            <p
+              className="text-sm leading-relaxed"
+              style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)" }}
+            >
+              Vi eldar stenugnen och bakar pizza på surdegsdeg. Nytt recept varje vecka.
+            </p>
+          </div>
         </RevealOnScroll>
 
         {/* Map side */}

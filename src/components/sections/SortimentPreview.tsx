@@ -32,7 +32,7 @@ const featured = [
 export default function SortimentPreview() {
   return (
     <section
-      className="py-24 md:py-36"
+      className="py-16 md:py-24"
       style={{ backgroundColor: "var(--surface)" }}
     >
       <div className="max-w-[1280px] mx-auto px-6 md:px-10">

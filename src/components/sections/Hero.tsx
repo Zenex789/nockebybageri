@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section
-      className="relative min-h-[92svh] flex items-end"
+      className="relative min-h-screen flex items-end"
       style={{ backgroundColor: "var(--dark)" }}
     >
       {/* Background image */}
@@ -29,7 +29,7 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1280px] w-full mx-auto px-6 md:px-10 pb-20 md:pb-28">
+      <div className="relative z-10 max-w-[1280px] w-full mx-auto px-6 md:px-10 pt-32 pb-20 md:pb-28">
         <div className="max-w-2xl">
           <span
             className="eyebrow mb-6"

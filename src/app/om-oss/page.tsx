@@ -36,7 +36,7 @@ export default function OmOssPage() {
       </div>
 
       {/* Main story */}
-      <section className="py-24 md:py-36" style={{ backgroundColor: "var(--bg)" }}>
+      <section className="py-16 md:py-24" style={{ backgroundColor: "var(--bg)" }}>
         <div className="max-w-[1280px] mx-auto px-6 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-16">
           {/* Text — wide column */}
           <RevealOnScroll className="lg:col-span-7">
@@ -148,7 +148,7 @@ export default function OmOssPage() {
 
       {/* Philosophy */}
       <section
-        className="py-24 md:py-36"
+        className="py-16 md:py-24"
         style={{ backgroundColor: "var(--surface)" }}
       >
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">
